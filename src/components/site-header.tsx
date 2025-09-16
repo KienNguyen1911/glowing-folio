@@ -1,37 +1,31 @@
 import Link from 'next/link';
-import { Button } from './ui/button';
+import { Home, User, Briefcase, Code, Star } from 'lucide-react';
 
 export function SiteHeader() {
   const navLinks = [
-    { href: '#about', label: 'About' },
-    { href: '#skills', label: 'Skills' },
-    { href: '#experience', label: 'Experience' },
-    { href: '#projects', label: 'Projects' },
+    { href: '#hero', label: 'Home', icon: <Home /> },
+    { href: '#about', label: 'About', icon: <User /> },
+    { href: '#skills', label: 'Skills', icon: <Code /> },
+    { href: '#experience', label: 'Experience', icon: <Briefcase /> },
+    { href: '#projects', label: 'Projects', icon: <Star /> },
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur-sm">
-      <div className="container flex h-14 max-w-screen-2xl items-center">
-        <Link href="/" className="mr-6 flex items-center space-x-2">
-          <span className="font-headline text-lg font-bold">NDK.</span>
-        </Link>
-        <nav className="hidden items-center space-x-6 text-sm font-medium md:flex">
-          {navLinks.map(link => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="font-headline transition-colors hover:text-primary text-foreground/80"
-            >
+    <header className="fixed bottom-4 left-1/2 z-50 -translate-x-1/2">
+      <nav className="flex items-center gap-2 rounded-full border border-border/40 bg-background/80 p-2 shadow-lg backdrop-blur-sm">
+        {navLinks.map(link => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className="group relative flex h-12 w-12 flex-col items-center justify-center rounded-full bg-transparent text-foreground/60 transition-colors hover:bg-accent hover:text-accent-foreground"
+          >
+            {link.icon}
+            <span className="absolute -top-7 hidden rounded-md bg-accent px-2 py-1 text-xs font-bold text-accent-foreground group-hover:block">
               {link.label}
-            </Link>
-          ))}
-        </nav>
-        <div className="flex flex-1 items-center justify-end">
-            <Button asChild variant="ghost" className="transition-colors hover:text-primary text-foreground/80">
-                <Link href="#contact" className="font-headline">Contact</Link>
-            </Button>
-        </div>
-      </div>
+            </span>
+          </Link>
+        ))}
+      </nav>
     </header>
   );
 }
