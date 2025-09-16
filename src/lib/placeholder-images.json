@@ -1,3 +1,28 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "about-illustration",
+      "description": "An abstract illustration representing a developer coding.",
+      "imageUrl": "https://picsum.photos/seed/about/500/500",
+      "imageHint": "developer coding"
+    },
+    {
+      "id": "project-booking",
+      "description": "Screenshot or visual for the Booking System project.",
+      "imageUrl": "https://picsum.photos/seed/booking/600/400",
+      "imageHint": "booking system"
+    },
+    {
+      "id": "project-payroll",
+      "description": "Screenshot or visual for the Payroll & Time Tracking project.",
+      "imageUrl": "https://picsum.photos/seed/payroll/600/400",
+      "imageHint": "payroll app"
+    },
+    {
+      "id": "project-reminder",
+      "description": "Screenshot or visual for the Reminder App project.",
+      "imageUrl": "https://picsum.photos/seed/reminder/600/400",
+      "imageHint": "reminder app"
+    }
+  ]
 }
