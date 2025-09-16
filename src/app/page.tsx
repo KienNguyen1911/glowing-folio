@@ -6,7 +6,6 @@ import { Extras } from '@/components/sections/extras';
 import { Hero } from '@/components/sections/hero';
 import { Projects } from '@/components/sections/projects';
 import { Skills } from '@/components/sections/skills';
-import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
 
 export default function Home() {
@@ -24,7 +23,6 @@ export default function Home() {
         <Contact />
       </main>
       <SiteHeader />
-      <SiteFooter />
     </div>
   );
 }
