@@ -23,7 +23,21 @@ export function Contact() {
                 </p>
 
                 <div className="mt-10">
-                    <ul className="grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
+                    {/* Mobile bento layout - 2 columns */}
+                    <div className="grid grid-cols-2 gap-4 sm:hidden">
+                        {contactInfo.map((item, index) => (
+                            <a
+                                key={index}
+                                href={item.href || "#"}
+                                className="flex flex-col items-center justify-center rounded-xl bg-card/40 p-4 transition-all hover:bg-primary/10 border border-solid"
+                            >
+                                <span className="text-accent text-2xl mb-2">{item.icon}</span>
+                                <span className="font-inter text-xs text-foreground/80">{item.text}</span>
+                            </a>
+                        ))}
+                    </div>
+                    {/* Desktop list layout */}
+                    <ul className="hidden sm:grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
                         {contactInfo.map((item, index) => (
                             <li key={index} className="flex items-center justify-center gap-4 text-foreground/80 sm:justify-start">
                                 <span className="text-accent">{item.icon}</span>
@@ -37,7 +51,7 @@ export function Contact() {
                     </ul>
                 </div>
 
-                <div className="mt-12">
+                <div className="mt-12 mb-10">
                     <Button asChild size="lg" className="bg-gradient-to-r from-primary to-accent text-primary-foreground transition-all hover:scale-105 hover:shadow-lg hover:shadow-accent/20">
                         <a href="mailto:ngkien1911@gmail.com">Let’s Connect 🚀</a>
                     </Button>

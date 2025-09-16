@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { Section, SectionTitle } from "@/components/section-wrapper";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { ProjectCard, type Project } from "@/components/project-card";
@@ -31,11 +32,32 @@ const projects: Project[] = [
 
 
 export function Projects() {
+    // Carousel state for mobile dot indicator
+    const [activeIndex, setActiveIndex] = React.useState(0);
+    const emblaApiRef = React.useRef(null);
+
+    // Import EmblaCarouselType for typing
+    // @ts-ignore-next-line
+    const handleApi = (api: any) => {
+        emblaApiRef.current = api;
+        if (!api) return;
+        const onSelect = () => {
+            setActiveIndex(api.selectedScrollSnap());
+        };
+        api.on("select", onSelect);
+        setActiveIndex(api.selectedScrollSnap());
+        // Clean up
+        return () => {
+            api.off("select", onSelect);
+        };
+    };
+
     return (
         <Section id="projects">
             <SectionTitle>Projects</SectionTitle>
             <Carousel 
-                opts={{ loop: true, align: "start" }} 
+                opts={{ loop: false, align: "start" }} 
+                setApi={handleApi}
                 className="w-full max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto"
             >
                 <CarouselContent>
@@ -50,6 +72,19 @@ export function Projects() {
                 <CarouselPrevious className="hidden md:flex" />
                 <CarouselNext className="hidden md:flex" />
             </Carousel>
+            {/* Mobile carousel footer dots */}
+            <div className="flex justify-center items-center gap-2 mt-4 md:hidden">
+                {projects.map((_, idx) => (
+                    <span
+                        key={idx}
+                        className={
+                            activeIndex === idx
+                                ? "transition-all w-6 h-2 rounded-full bg-primary"
+                                : "transition-all w-2 h-2 rounded-full bg-muted"
+                        }
+                    />
+                ))}
+            </div>
         </Section>
     );
 }

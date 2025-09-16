@@ -12,7 +12,7 @@ export function Education() {
                         <div className="flex items-start gap-4">
                             <GraduationCap className="mt-1 h-8 w-8 shrink-0 text-primary" />
                             <div>
-                                <CardTitle className="font-headline text-xl">FPT College, Hanoi</CardTitle>
+                                <CardTitle className="font-headline text-xl">BTEC FPT College, Hanoi</CardTitle>
                                 <p className="text-muted-foreground">09/2020 – 12/2022</p>
                                 <CardDescription className="font-inter mt-2">Major: IT, Minor: Web Development</CardDescription>
                             </div>
