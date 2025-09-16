@@ -4,25 +4,25 @@
 
 @layer base {
   :root {
-    --background: 28 8% 13%; /* #25221F */
-    --foreground: 38 41% 80%; /* Lighter shade for text */
-    --card: 28 8% 15%; /* Slightly lighter than background */
-    --card-foreground: 38 41% 80%;
-    --popover: 28 8% 13%;
-    --popover-foreground: 38 41% 80%;
-    --primary: 38 52% 62%; /* #CCA170 */
-    --primary-foreground: 28 8% 13%; /* #25221F */
-    --secondary: 28 29% 33%; /* #6A503C */
-    --secondary-foreground: 38 41% 80%;
-    --muted: 28 29% 33%;
-    --muted-foreground: 38 20% 65%;
-    --accent: 38 52% 62%; /* #CCA170 */
-    --accent-foreground: 28 8% 13%;
+    --background: 0 0% 7%; /* #121212 */
+    --foreground: 0 0% 98%; /* Almost white for high contrast text */
+    --card: 0 0% 10%; /* Slightly lighter than background for cards */
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 45 93% 47%; /* A vibrant gold/yellow for primary actions */
+    --primary-foreground: 0 0% 10%; /* Dark text on primary buttons */
+    --secondary: 210 4% 46%; /* A cool gray for secondary elements */
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%; /* Muted background for less important elements */
+    --muted-foreground: 0 0% 63%; /* Lighter gray for muted text */
+    --accent: 45 93% 47%; /* Same as primary for accent */
+    --accent-foreground: 0 0% 10%;
     --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 28 8% 20%; /* Slightly lighter for contrast */
-    --input: 28 8% 20%;
-    --ring: 38 52% 62%; /* #CCA170 */
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 15%; /* A slightly lighter border for subtle separation */
+    --input: 0 0% 15%;
+    --ring: 45 93% 47%;
     --radius: 0.75rem;
   }
 }
@@ -33,9 +33,9 @@
   }
   body {
     @apply bg-background text-foreground;
-    background-image: radial-gradient(at 20% 10%, hsl(38 52% 62% / 0.1), transparent 50%),
-      radial-gradient(at 80% 20%, hsl(28 29% 33% / 0.1), transparent 50%),
-      radial-gradient(at 50% 90%, hsl(38 52% 62% / 0.05), transparent 60%);
+    background-image: radial-gradient(at 20% 10%, hsl(45 93% 47% / 0.1), transparent 50%),
+      radial-gradient(at 80% 20%, hsl(210 4% 46% / 0.1), transparent 50%),
+      radial-gradient(at 50% 90%, hsl(45 93% 47% / 0.05), transparent 60%);
     background-attachment: fixed;
   }
 }
