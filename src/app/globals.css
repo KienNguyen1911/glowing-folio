@@ -4,25 +4,25 @@
 
 @layer base {
   :root {
-    --background: 222 39% 6%;
-    --foreground: 210 40% 98%;
-    --card: 222 39% 9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222 39% 6%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 197 78% 52%;
-    --primary-foreground: 222 39% 6%;
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 283 81% 63%;
-    --accent-foreground: 210 40% 98%;
+    --background: 28 8% 13%; /* #25221F */
+    --foreground: 38 41% 80%; /* Lighter shade for text */
+    --card: 28 8% 15%; /* Slightly lighter than background */
+    --card-foreground: 38 41% 80%;
+    --popover: 28 8% 13%;
+    --popover-foreground: 38 41% 80%;
+    --primary: 38 52% 62%; /* #CCA170 */
+    --primary-foreground: 28 8% 13%; /* #25221F */
+    --secondary: 28 29% 33%; /* #6A503C */
+    --secondary-foreground: 38 41% 80%;
+    --muted: 28 29% 33%;
+    --muted-foreground: 38 20% 65%;
+    --accent: 38 52% 62%; /* #CCA170 */
+    --accent-foreground: 28 8% 13%;
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 197 78% 52%;
+    --border: 28 8% 20%; /* Slightly lighter for contrast */
+    --input: 28 8% 20%;
+    --ring: 38 52% 62%; /* #CCA170 */
     --radius: 0.75rem;
   }
 }
@@ -33,9 +33,9 @@
   }
   body {
     @apply bg-background text-foreground;
-    background-image: radial-gradient(at 20% 10%, hsl(283 81% 63% / 0.15), transparent 50%),
-      radial-gradient(at 80% 20%, hsl(197 78% 52% / 0.15), transparent 50%),
-      radial-gradient(at 50% 90%, hsl(283 81% 63% / 0.1), transparent 60%);
+    background-image: radial-gradient(at 20% 10%, hsl(38 52% 62% / 0.1), transparent 50%),
+      radial-gradient(at 80% 20%, hsl(28 29% 33% / 0.1), transparent 50%),
+      radial-gradient(at 50% 90%, hsl(38 52% 62% / 0.05), transparent 60%);
     background-attachment: fixed;
   }
 }

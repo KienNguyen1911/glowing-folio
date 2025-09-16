@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Section } from "@/components/section-wrapper";
+import Image from "next/image";
 
 export function Hero() {
     return (
@@ -20,16 +21,20 @@ export function Hero() {
                         <Button asChild size="lg" className="transition-transform hover:scale-105">
                             <Link href="#projects">🚀 View Projects</Link>
                         </Button>
-                        <Button asChild size="lg" variant="outline" className="border-accent text-accent transition-transform hover:scale-105 hover:bg-accent/10 hover:text-accent">
+                        <Button asChild size="lg" variant="outline" className="border-primary text-primary transition-transform hover:scale-105 hover:bg-primary/10 hover:text-primary">
                             <Link href="#contact">📩 Contact Me</Link>
                         </Button>
                     </div>
                 </div>
                 <div className="relative mx-auto h-80 w-80 md:h-96 md:w-96">
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/30 to-accent/30 opacity-70 blur-3xl"></div>
-                    <div className="flex h-full w-full items-center justify-center rounded-2xl border border-border bg-card/50 backdrop-blur-sm">
-                        <p className="font-headline text-muted-foreground">3D Avatar Placeholder</p>
-                    </div>
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 opacity-70 blur-3xl"></div>
+                    <Image 
+                        src="/avt.jpeg"
+                        alt="Kien's Avatar"
+                        width={400}
+                        height={400}
+                        className="relative h-full w-full rounded-full object-cover shadow-lg"
+                    />
                 </div>
             </div>
         </Section>
